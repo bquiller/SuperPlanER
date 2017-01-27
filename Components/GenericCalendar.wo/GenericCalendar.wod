@@ -1,0 +1,26 @@
+PageProxy : AjaxProxy {
+	proxyName = "wopage";
+	name = "jsonrpc";
+} 
+Reset : WOSubmitButton {
+  action = reset;
+  value = "Retourner à mon profil";
+}
+IfNotMyCalendar : WOConditional {
+	condition = myCalendar;
+	negate = "true";
+}
+InspecteurBox: CktlAjaxModalDialog {
+	label = "Inspecteur";
+	id = "InspecteurBox";
+	pageName = "Inspecteur";
+	title = "Inspecter un évènement";
+	minWidth = 500;
+	resizable = true;
+	minimizable = false;
+	closable = true;
+	maximizable = false;
+	draggable = true;
+	centerVertically = true;
+	height = 600;
+}

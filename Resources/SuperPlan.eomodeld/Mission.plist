@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {
+            columnName = "FOU_ORDRE"; 
+            externalType = NUMBER; 
+            name = fouOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MIS_DEBUT"; 
+            externalType = DATE; 
+            name = misDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MIS_ETAT"; 
+            externalType = VARCHAR2; 
+            name = misEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "MIS_FIN"; 
+            externalType = DATE; 
+            name = misFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MIS_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = misMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }
+    ); 
+    attributesUsedForLocking = (fouOrdre, misDebut, misEtat, misFin, misMotif); 
+    className = "org.cocktail.superplaner.serveur.metier.Mission"; 
+    classProperties = (fournis, misDebut, misEtat, misFin, misMotif); 
+    externalName = "jefy_mission.MISSION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fournis, misDebut, misEtat, misFin, misMotif); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Mission"; 
+    }; 
+    name = Mission; 
+    primaryKeyAttributes = (fouOrdre, misDebut); 
+    relationships = (
+        {
+            destination = FournisUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fouOrdre; sourceAttribute = fouOrdre; }); 
+            name = fournis; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

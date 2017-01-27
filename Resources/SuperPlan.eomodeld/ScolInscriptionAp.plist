@@ -1,0 +1,67 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IDIPL_NUMERO"; 
+            externalType = NUMBER; 
+            name = idiplNumero; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IMRAP_DISPENSE"; 
+            externalType = NUMBER; 
+            name = imrapDispense; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "IMRAP_SEMESTRE"; 
+            externalType = NUMBER; 
+            name = imrapSemestre; 
+            precision = 1; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "MRAP_KEY"; 
+            externalType = NUMBER; 
+            name = mrapKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (idiplNumero, mrapKey, imrapSemestre, imrapDispense, fannKey); 
+    className = "org.cocktail.superplaner.serveur.metier.ScolInscriptionAp"; 
+    classProperties = (imrapDispense, scolMaquetteRepartitionAp, mrapKey, maquetteRepartitionAp); 
+    externalName = "SCOLARITE.SCOL_INSCRIPTION_AP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (imrapDispense, mrapKey); }; 
+    name = ScolInscriptionAp; 
+    primaryKeyAttributes = (mrapKey, imrapSemestre, idiplNumero); 
+    relationships = (
+        {
+            destination = MaquetteRepartitionAp; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrapKey; sourceAttribute = mrapKey; }); 
+            name = maquetteRepartitionAp; 
+        }, 
+        {
+            destination = "FwkScolarite_ScolMaquetteRepartitionAp"; 
+            isMandatory = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mrapKey; sourceAttribute = mrapKey; }); 
+            name = scolMaquetteRepartitionAp; 
+        }
+    ); 
+}

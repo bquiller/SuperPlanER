@@ -1,0 +1,162 @@
+{
+    attributes = (
+        {
+            columnName = ANNEE; 
+            externalType = NUMBER; 
+            name = annee; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = CODE; 
+            externalType = VARCHAR2; 
+            name = code; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = DROIT; 
+            externalType = NUMBER; 
+            name = droit; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "KEY_CHAR"; 
+            externalType = VARCHAR2; 
+            name = keyChar; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "KEY_INT"; 
+            externalType = NUMBER; 
+            name = keyInt; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 201; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NIVEAU; 
+            externalType = NUMBER; 
+            name = niveau; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = PERE; 
+            externalType = VARCHAR2; 
+            name = pere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = VOCATION; 
+            externalType = VARCHAR2; 
+            name = vocation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }
+    ); 
+    attributesUsedForLocking = (annee, code, droit, keyChar, keyInt, libelle, niveau, pere, vocation); 
+    className = "org.cocktail.superplaner.serveur.metier.ScolAutorisation"; 
+    classProperties = (
+        annee, 
+        code, 
+        droit, 
+        formationSpecialisation, 
+        libelle, 
+        maquetteAp, 
+        maquetteEc, 
+        maquetteParcours, 
+        maquetteSemestre, 
+        maquetteUe, 
+        niveau, 
+        pere, 
+        vocation
+    ); 
+    externalName = "SCOLARITE.V_SCOL_AUTORISATION_ARBRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            annee, 
+            code, 
+            droit, 
+            formationSpecialisation, 
+            libelle, 
+            maquetteAp, 
+            maquetteEc, 
+            maquetteParcours, 
+            maquetteSemestre, 
+            maquetteUe, 
+            niveau, 
+            pere, 
+            vocation
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ScolAutorisation"; 
+    }; 
+    name = ScolAutorisation; 
+    primaryKeyAttributes = (annee, code, droit); 
+    relationships = (
+        {
+            destination = FormationSpecialisation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fspnKey; sourceAttribute = keyInt; }); 
+            name = formationSpecialisation; 
+        }, 
+        {
+            destination = MaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = keyInt; }); 
+            name = maquetteAp; 
+        }, 
+        {
+            destination = MaquetteEc; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mecKey; sourceAttribute = keyInt; }); 
+            name = maquetteEc; 
+        }, 
+        {
+            destination = MaquetteParcours; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mparKey; sourceAttribute = keyInt; }); 
+            name = maquetteParcours; 
+        }, 
+        {
+            destination = MaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = keyInt; }); 
+            name = maquetteSemestre; 
+        }, 
+        {
+            destination = MaquetteUe; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = mueKey; sourceAttribute = keyInt; }); 
+            name = maquetteUe; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

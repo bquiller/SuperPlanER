@@ -1,0 +1,53 @@
+<webobject name = "Wrapper">
+	<webobject name = "IfNotEtudiant">
+ 		<webobject name = "AulSearch">Consulter l'emploi du temps d'une tierce personne <webobject name = "ImgSearch" /> </webobject>
+
+      	<webobject name = "AucSearch">
+        	<div style = "display:none;">
+          		<webobject name = "AulOnClose" />
+          		<webobject name = "AmdSearch">
+            		<webobject name = "IsInSearch">
+              			<webobject name = "MyForm1"> <webobject name = "PersonneSrch" /> </webobject>
+            		</webobject>
+            		<webobject name = "AucSelPersonne">
+              			<webobject name = "IsSelPersonne">
+                			<webobject name = "AulSelectFromSearch">Choisir <webobject name = "NomSelPersonne" /></webobject>
+              			</webobject>
+        			</webobject>
+          		</webobject>
+        	</div>
+      	</webobject>
+      	
+      	<webobject name = "AulPicker">Consulter l'emploi du temps d'une formation <webobject name = "ImgSearch" /> </webobject>
+
+      	<webobject name = "AucPicker">
+        	<div style = "display:none;">
+          		<webobject name = "AulPickerOnClose" />
+          		<webobject name = "AmdPicker">
+            		<webobject name = "IsInPicker">
+              			<webobject name = "MyForm1"> <webobject name = "DiplomePicker" /> </webobject>
+            		</webobject>
+            		<webobject name = "AucSelPicker">
+              			<webobject name = "IsSelSemestre">
+                			<webobject name = "AulSelectFromPicker">Choisir <webobject name = "NomSelSemestre" /></webobject>
+              			</webobject>
+        			</webobject>
+          		</webobject>
+        	</div>
+      	</webobject>
+      	
+	</webobject>
+ 
+	<webobject name = "CalendarContainer">
+		<webobject name = "IfEtudiant">
+			<br/>
+			<b>Pour voir d'autres groupes,</b> <webobject name = "ChoixGroupes"></webobject>
+		</webobject>
+		<br/><br/>
+	    <webobject name = "Calendar"/>
+	</webobject>
+
+  <webobject name = "ExceptionModalDialog" />
+  
+  <webobject name = "AucTriggerSearch"><webobject name = "AutSearch" /></webobject>
+</webobject>

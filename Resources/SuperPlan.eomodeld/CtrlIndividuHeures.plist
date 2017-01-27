@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {
+            columnName = "CIH_HEURE_DEBUT"; 
+            externalType = DATE; 
+            name = cihHeureDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "CIH_HEURE_FIN"; 
+            externalType = DATE; 
+            name = cihHeureFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "CIH_KEY"; 
+            externalType = NUMBER; 
+            name = cihKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CIJ_KEY"; 
+            externalType = NUMBER; 
+            name = cijKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cihHeureDebut, cihHeureFin, cihKey, cijKey); 
+    className = "org.cocktail.superplaner.serveur.metier.CtrlIndividuHeures"; 
+    classProperties = (cihHeureDebut, cihHeureFin, ctrlIndividuJours); 
+    externalName = "EDTSCOL.CTRL_INDIVIDU_HEURES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cihHeureDebut, cihHeureFin, ctrlIndividuJours); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.CtrlIndividuHeures"; 
+    }; 
+    name = CtrlIndividuHeures; 
+    primaryKeyAttributes = (cihKey); 
+    relationships = (
+        {
+            destination = CtrlIndividuJours; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cijKey; sourceAttribute = cijKey; }); 
+            name = ctrlIndividuJours; 
+        }
+    ); 
+}

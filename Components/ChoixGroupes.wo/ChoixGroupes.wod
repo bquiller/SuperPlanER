@@ -1,0 +1,40 @@
+
+Form : ERXWOForm {
+    embedded = true;
+}
+
+Script : WOJavaScript {
+	scriptString = script;
+}
+GroupesAps : WORepetition {
+	list = grpsPossibles;
+	item = groupeAp;
+}
+
+GroupeAp : WOString {
+	value = groupeAp.mapLibelle;
+}
+GroupeSem : WOString {
+	value = groupeAp.vParcoursAp.semestre.msemOrdre;
+}
+IdGroupeAp : WOString {
+	value = groupeAp.mapKey;
+}
+Groupes : WORepetition {
+	list = groupeAp.scolGroupeObjets;
+	item = groupe;
+}
+Groupe : WOString {
+	value = groupe.scolGroupeGrp.ggrpCode;
+}
+
+Case : WOCheckBox {
+	id = idCheckBoxChoixGroupe;	
+	checked = groupChecked;
+}
+Valider : AjaxSubmitButton {
+    action = valider;
+    value = "Valider";
+    evalScripts = true;
+}
+

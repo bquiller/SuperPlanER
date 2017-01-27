@@ -1,0 +1,532 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    AconnectionDictionary = {
+        URL = ""; 
+        driver = ""; 
+        jdbc2Info = {
+            "ANSI92_CONFORMANCE" = ANSI92EntryLevel; 
+            "DBMS_NAME" = Oracle; 
+            "DRIVER_NAME" = "Oracle JDBC driver"; 
+            "DRIVER_VER" = "10.2.0.2.0"; 
+            "IDENTIFIER_QUOTE_STRING" = "\""; 
+            "NON_NULLABLE_COLUMNS" = T; 
+            "STRING_FUNCTIONS" = "ASCII,CHAR,CONCAT,LCASE,LENGTH,LTRIM,REPLACE,RTRIM,SOUNDEX,SUBSTRING,UCASE"; 
+            typeInfo = {
+                BLOB = {
+                    createParams = 0; 
+                    defaultJDBCType = (BLOB); 
+                    isNullable = T; 
+                    isSearchable = F; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = "-1"; 
+                }; 
+                CHAR = {
+                    createParams = 1; 
+                    defaultJDBCType = (CHAR); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2000; 
+                }; 
+                CLOB = {
+                    createParams = 0; 
+                    defaultJDBCType = (CLOB); 
+                    isNullable = T; 
+                    isSearchable = F; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = "-1"; 
+                }; 
+                DATE = {
+                    createParams = 0; 
+                    defaultJDBCType = (DATE, TIME); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 7; 
+                }; 
+                FLOAT = {
+                    createParams = 0; 
+                    defaultJDBCType = (FLOAT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 127; 
+                    minScale = "-84"; 
+                    precision = 63; 
+                }; 
+                LONG = {
+                    createParams = 0; 
+                    defaultJDBCType = ("LONG VARCHAR"); 
+                    isNullable = T; 
+                    isSearchable = F; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483647; 
+                }; 
+                "LONG RAW" = {
+                    createParams = 0; 
+                    defaultJDBCType = ("LONG VARBINARY"); 
+                    isNullable = T; 
+                    isSearchable = F; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2147483647; 
+                }; 
+                NUMBER = {
+                    createParams = 2; 
+                    defaultJDBCType = (BIT, TINYINT, BIGINT, NUMERIC, INTEGER, SMALLINT); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 127; 
+                    minScale = "-84"; 
+                    precision = 38; 
+                }; 
+                RAW = {
+                    createParams = 1; 
+                    defaultJDBCType = (VARBINARY); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 2000; 
+                }; 
+                REAL = {
+                    createParams = 0; 
+                    defaultJDBCType = (REAL); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 127; 
+                    minScale = "-84"; 
+                    precision = 63; 
+                }; 
+                TIMESTAMP = {
+                    createParams = 0; 
+                    defaultJDBCType = (TIMESTAMP); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 11; 
+                }; 
+                VARCHAR2 = {
+                    createParams = 1; 
+                    defaultJDBCType = (VARCHAR); 
+                    isNullable = T; 
+                    isSearchable = T; 
+                    maxScale = 0; 
+                    minScale = 0; 
+                    precision = 4000; 
+                }; 
+            }; 
+        }; 
+        password = ""; 
+        plugin = ""; 
+        username = ""; 
+    }; 
+    entities = (
+        {
+            className = "org.cocktail.superplaner.serveur.metier.AffectationSalle"; 
+            name = AffectationSalle; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.CategObjet"; 
+            name = CategObjet; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ComposantEdt"; 
+            name = ComposantEdt; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.CtrlIndividuJours"; 
+            name = CtrlIndividuJours; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.CtrlIndividuSemaines"; 
+            name = CtrlIndividuSemaines; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.CtrlIndividuHeures"; 
+            name = CtrlIndividuHeures; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.Depositaire"; 
+            name = Depositaire; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.DepositaireSalles"; 
+            name = DepositaireSalles; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.EdtGedexport"; 
+            name = EdtGedexport; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ElementEdt"; 
+            name = ElementEdt; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ElementTypeEdt"; 
+            name = ElementTypeEdt; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ExamenEntete"; 
+            name = ExamenEntete; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.FormationAnnee"; 
+            name = FormationAnnee; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.FormationDiplome"; 
+            name = FormationDiplome; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolFormationFiliere"; 
+            name = FormationFiliere; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolFormationGrade"; 
+            name = FormationGrade; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.FormationHabilitation"; 
+            name = FormationHabilitation; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.FormationSpecialisation"; 
+            name = FormationSpecialisation; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.FournisUlr"; 
+            name = FournisUlr; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.Gardien"; 
+            name = Gardien; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.GardienSalle"; 
+            name = GardienSalle; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.GrhumParametres"; 
+            name = GrhumParametres; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.HcompRec"; 
+            name = HcompRec; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.HcompRecup"; 
+            name = HcompRecup; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.HoraireCode"; 
+            name = HoraireCode; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ImplantationGeo"; 
+            name = ImplantationGeo; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.IndividuUlr"; 
+            name = IndividuUlr; 
+        }, 
+        {className = "org.cocktail.superplaner.serveur.metier.Local"; name = Local; }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.LotSalle"; 
+            name = LotSalle; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteAp"; 
+            name = MaquetteAp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteEc"; 
+            name = MaquetteEc; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteParcours"; 
+            name = MaquetteParcours; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteRepartitionAp"; 
+            name = MaquetteRepartitionAp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteRepartitionEc"; 
+            name = MaquetteRepartitionEc; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteRepartitionSem"; 
+            name = MaquetteRepartitionSem; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteRepartitionUe"; 
+            name = MaquetteRepartitionUe; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteResponsableEc"; 
+            name = MaquetteResponsableEc; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteSemestre"; 
+            name = MaquetteSemestre; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.MaquetteUe"; 
+            name = MaquetteUe; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.Mission"; 
+            name = Mission; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.Occupant"; 
+            name = Occupant; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.Periodicite"; 
+            name = Periodicite; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.PeriodiciteAffSalle"; 
+            name = PeriodiciteAffSalle; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.Personne"; 
+            name = Personne; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.PhotosEmployesGrhum"; 
+            name = PhotoEmploye; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.PrefScol"; 
+            name = PrefScol; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.PrefUser"; 
+            name = PrefUser; 
+        }, 
+        {className = "org.cocktail.superplaner.serveur.metier.Prises"; name = Prises; }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.RepartBatImpGeo"; 
+            name = RepartBatImpGeo; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.RepartLotIndividu"; 
+            name = RepartLotIndividu; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.RepartLotSalle"; 
+            name = RepartLotSalle; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.RepartStructure"; 
+            name = RepartStructure; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.RepartTypeGroupe"; 
+            name = RepartTypeGroupe; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaCouleurEc"; 
+            name = ResaCouleurEc; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaDate"; 
+            name = ResaDate; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaExamen"; 
+            name = ResaExamen; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaFamilleObjet"; 
+            name = ResaFamilleObjet; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaObjet"; 
+            name = ResaObjet; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaObjetDepositaire"; 
+            name = ResaObjetDepositaire; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaObjetDroits"; 
+            name = ResaObjetDroits; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaObjetReserve"; 
+            name = ResaObjetReserve; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaSalles"; 
+            name = ResaSalles; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ResaTypeObjet"; 
+            name = ResaTypeObjet; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.Reservation"; 
+            name = Reservation; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ReservationAp"; 
+            name = ReservationAp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ReservationObjet"; 
+            name = ReservationObjet; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ReservationSemestre"; 
+            name = ReservationSemestre; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.SalleSouhaitee"; 
+            name = SalleSouhaitee; 
+        }, 
+        {className = "org.cocktail.superplaner.serveur.metier.Salles"; name = Salles; }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolAutorisation"; 
+            name = ScolAutorisation; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolDroitDiplome"; 
+            name = ScolDroitDiplome; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolDroitLogin"; 
+            name = ScolDroitLogin; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolGroupeGrp"; 
+            name = ScolGroupeGrp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolGroupeInclusion"; 
+            name = ScolGroupeInclusion; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolGroupeObjet"; 
+            name = ScolGroupeObjet; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolInscriptionEtudiant"; 
+            name = ScolInscriptionEtudiant; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolInscriptionAp"; 
+            name = ScolInscriptionAp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolInscriptionGrp"; 
+            name = ScolInscriptionGrp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolTransfertGrp"; 
+            name = ScolTransfertGrp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.ScolTransfertMap"; 
+            name = ScolTransfertMap; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.Secretariat"; 
+            name = Secretariat; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.StructureUlr"; 
+            name = StructureUlr; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.StructuresAutorisees"; 
+            name = StructuresAutorisees; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.TypeLocation"; 
+            name = TypeLocation; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.TypeObjet"; 
+            name = TypeObjet; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.TypeObjetMaj"; 
+            name = TypeObjetMaj; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.TypeRessource"; 
+            name = TypeRessource; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.TypeSalle"; 
+            name = TypeSalle; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VDetailOccupantPeriodicite"; 
+            name = VDetailOccupantPeriodicite; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VGroupePersonne"; 
+            name = VGroupePersonne; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VIntervenantAp"; 
+            name = VIntervenantAp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VLotSalleIndividu"; 
+            name = VLotSalleIndividu; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VMaquetteAp"; 
+            name = VMaquetteAp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VParcoursAp"; 
+            name = VParcoursAp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VParcoursEc"; 
+            name = VParcoursEc; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VParcoursEx"; 
+            name = VParcoursEx; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VRespAp"; 
+            name = VRespAp; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VTreeObjet"; 
+            name = VTreeObjet; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VTreeObjets"; 
+            name = VTreeObjets; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VTreeSalles"; 
+            name = VTreeSalles; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VVacancesGestorp5"; 
+            name = VVacancesGestorp5; 
+        }, 
+        {
+            className = "org.cocktail.superplaner.serveur.metier.VacancesScolaires"; 
+            name = VacancesScolaires; 
+        }
+    ); 
+    userInfo = {modelId = EDTSCOL; }; 
+}

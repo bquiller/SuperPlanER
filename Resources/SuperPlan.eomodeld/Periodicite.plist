@@ -1,0 +1,144 @@
+{
+    attributes = (
+        {
+            columnName = "DATE_DEB"; 
+            externalType = DATE; 
+            name = dateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DATE_FIN"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = HCOMP; 
+            externalType = NUMBER; 
+            name = hcomp; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PER_KEY"; 
+            externalType = NUMBER; 
+            name = perKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_KEY"; 
+            externalType = NUMBER; 
+            name = resaKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (dateDeb, dateFin, hcomp, perKey, resaKey); 
+    className = "org.cocktail.superplaner.serveur.metier.Periodicite"; 
+    classProperties = (
+        dateDeb, 
+        dateFin, 
+        hcomp, 
+        occupants, 
+        resaExamens, 
+        resaSalles, 
+        reservation, 
+        reservationAp, 
+        sallesSouhaitees, 
+        reservationObjets, 
+        reservationSemestres
+    ); 
+    externalName = "EDTSCOL.PERIODICITE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            dateDeb, 
+            dateFin, 
+            hcomp, 
+            occupants, 
+            resaExamens, 
+            resaSalles, 
+            reservation, 
+            reservationAp, 
+            sallesSouhaitees, 
+            reservationObjets, 
+            reservationSemestres
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.Periodicite"; 
+    }; 
+    name = Periodicite; 
+    primaryKeyAttributes = (perKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Occupant; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = occupants; 
+            numberOfToManyFaultsToBatchFetch = 1; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ResaExamen; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = resaExamens; 
+            numberOfToManyFaultsToBatchFetch = 1; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ResaSalles; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = resaSalles; 
+            numberOfToManyFaultsToBatchFetch = 1; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Reservation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservation; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ReservationAp; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservationAp; 
+            numberOfToManyFaultsToBatchFetch = 1; 
+        }, 
+        {
+            destination = ReservationObjet; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservationObjets; 
+        }, 
+        {
+            destination = ReservationSemestre; 
+            internalInfo = {"_nameInObjectStore" = reservationSemestre; }; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = reservationSemestres; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = SalleSouhaitee; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaKey; sourceAttribute = resaKey; }); 
+            name = sallesSouhaitees; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

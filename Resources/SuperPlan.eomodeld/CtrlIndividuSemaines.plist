@@ -1,0 +1,76 @@
+{
+    attributes = (
+        {
+            columnName = "CIS_DATE"; 
+            externalType = NUMBER; 
+            name = cisDate; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "CIS_KEY"; 
+            externalType = NUMBER; 
+            name = cisKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CIS_NO_SEMAINE"; 
+            externalType = NUMBER; 
+            name = cisNoSemaine; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cisDate, cisKey, cisNoSemaine, fannKey, noIndividu); 
+    className = "org.cocktail.superplaner.serveur.metier.CtrlIndividuSemaines"; 
+    classProperties = (cisDate, cisNoSemaine, ctrlIndividuJourses, formationAnnee, individuUlr); 
+    externalName = "EDTSCOL.CTRL_INDIVIDU_SEMAINES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cisDate, cisNoSemaine, ctrlIndividuJourses, formationAnnee, individuUlr); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.CtrlIndividuSemaines"; 
+    }; 
+    name = CtrlIndividuSemaines; 
+    primaryKeyAttributes = (cisKey); 
+    relationships = (
+        {
+            destination = CtrlIndividuJours; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cisKey; sourceAttribute = cisKey; }); 
+            name = ctrlIndividuJourses; 
+        }, 
+        {
+            destination = FormationAnnee; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fannKey; sourceAttribute = fannKey; }); 
+            name = formationAnnee; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = IndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individuUlr; 
+        }
+    ); 
+}

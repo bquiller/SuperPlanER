@@ -1,0 +1,16 @@
+wolips.password=mon_password
+wolips.host=localhost
+wolips.port=9485
+
+
+er.extensions.ERXModelGroup.FwkScolarite_ScolConstanteBudget.fannKey.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarite_ScolConstanteSupplement.fannKey.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarite_ScolFormationRepartitionCnu.noCnu.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarite_ScolMaquetteEc.cbudKey.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarite_ScolMaquetteResponsablePar.mparKey.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarix_GarnucheAppliDocumentation.applKey.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarix_GarnucheAppliUtilisateur.noIndividu.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarix_GarnucheAppliUtilisateur.applKey.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarix_GarnucheApplication.applKey.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarix_PreCandidat.natOrdre.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkScolarix_VDpaieCarteRestant.numeroInscription.ignoreTypeMismatch=true

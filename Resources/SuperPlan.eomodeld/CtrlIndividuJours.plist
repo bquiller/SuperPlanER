@@ -1,0 +1,60 @@
+{
+    attributes = (
+        {
+            columnName = "CIJ_DATE"; 
+            externalType = DATE; 
+            name = cijDate; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "CIJ_KEY"; 
+            externalType = NUMBER; 
+            name = cijKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CIJ_NO_JOUR"; 
+            externalType = NUMBER; 
+            name = cijNoJour; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CIS_KEY"; 
+            externalType = NUMBER; 
+            name = cisKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cijDate, cijKey, cijNoJour, cisKey); 
+    className = "org.cocktail.superplaner.serveur.metier.CtrlIndividuJours"; 
+    classProperties = (cijDate, cijNoJour, ctrlIndividuHeureses, ctrlIndividuSemaines); 
+    externalName = "EDTSCOL.CTRL_INDIVIDU_JOURS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cijDate, cijNoJour, ctrlIndividuHeureses, ctrlIndividuSemaines); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.CtrlIndividuJours"; 
+    }; 
+    name = CtrlIndividuJours; 
+    primaryKeyAttributes = (cijKey); 
+    relationships = (
+        {
+            destination = CtrlIndividuHeures; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cijKey; sourceAttribute = cijKey; }); 
+            name = ctrlIndividuHeureses; 
+        }, 
+        {
+            destination = CtrlIndividuSemaines; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cisKey; sourceAttribute = cisKey; }); 
+            name = ctrlIndividuSemaines; 
+        }
+    ); 
+}

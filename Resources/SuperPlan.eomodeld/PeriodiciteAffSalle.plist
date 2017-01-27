@@ -1,0 +1,53 @@
+{
+    attributes = (
+        {
+            columnName = "AFF_KEY"; 
+            externalType = NUMBER; 
+            name = affKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DATE_DEB"; 
+            externalType = DATE; 
+            name = dateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DATE_FIN"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "PAFF_KEY"; 
+            externalType = NUMBER; 
+            name = paffKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (affKey, dateDeb, dateFin, paffKey); 
+    className = "org.cocktail.superplaner.serveur.metier.PeriodiciteAffSalle"; 
+    classProperties = (affectationSalle, dateDeb, dateFin); 
+    externalName = "EDTSCOL.PERIODICITE_AFF_SALLE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (affectationSalle, dateDeb, dateFin); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.PeriodiciteAffSalle"; 
+    }; 
+    name = PeriodiciteAffSalle; 
+    primaryKeyAttributes = (paffKey); 
+    relationships = (
+        {
+            destination = AffectationSalle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = affKey; sourceAttribute = affKey; }); 
+            name = affectationSalle; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

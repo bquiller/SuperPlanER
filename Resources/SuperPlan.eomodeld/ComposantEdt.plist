@@ -1,0 +1,138 @@
+{
+    attributes = (
+        {
+            columnName = "COMP_KEY"; 
+            externalType = NUMBER; 
+            name = compKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "COMP_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = compLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MSEM_KEY"; 
+            externalType = NUMBER; 
+            name = msemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TLOC_CODE"; 
+            externalType = VARCHAR2; 
+            name = tlocCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        compKey, 
+        compLibelle, 
+        dCreation, 
+        dModification, 
+        fannKey, 
+        msemKey, 
+        noIndividu, 
+        tlocCode
+    ); 
+    className = "org.cocktail.superplaner.serveur.metier.ComposantEdt"; 
+    classProperties = (
+        compLibelle, 
+        dCreation, 
+        dModification, 
+        elementEdts, 
+        fannKey, 
+        individu, 
+        semestre, 
+        tlocCode, 
+        typeLocation
+    ); 
+    externalName = "EDTSCOL.COMPOSANT_EDT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            compLibelle, 
+            dCreation, 
+            dModification, 
+            elementEdts, 
+            fannKey, 
+            individu, 
+            semestre, 
+            tlocCode, 
+            typeLocation
+        ); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ComposantEdt"; 
+    }; 
+    name = ComposantEdt; 
+    primaryKeyAttributes = (compKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = ElementEdt; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = compKey; sourceAttribute = compKey; }); 
+            name = elementEdts; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individu; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = MaquetteSemestre; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = msemKey; sourceAttribute = msemKey; }); 
+            name = semestre; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = TypeLocation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = tlocCode; sourceAttribute = tlocCode; }); 
+            name = typeLocation; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

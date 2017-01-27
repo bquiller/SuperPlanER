@@ -1,0 +1,95 @@
+{
+    attributes = (
+        {
+            columnName = "COMP_KEY"; 
+            externalType = NUMBER; 
+            name = compKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "EEDT_KEY"; 
+            externalType = NUMBER; 
+            name = eedtKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ELEM_KEY"; 
+            externalType = NUMBER; 
+            name = elemKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ELEM_TYPE"; 
+            externalType = VARCHAR2; 
+            name = elemType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GGRP_KEY"; 
+            externalType = NUMBER; 
+            name = ggrpKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (compKey, eedtKey, elemKey, ggrpKey); 
+    className = "org.cocktail.superplaner.serveur.metier.ElementEdt"; 
+    classProperties = (ap, elemType, elementTypeEdt, groupe, individu, salle); 
+    externalName = "EDTSCOL.ELEMENT_EDT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (ap, elemType, elementTypeEdt, groupe, individu, salle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ElementEdt"; 
+    }; 
+    name = ElementEdt; 
+    primaryKeyAttributes = (eedtKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = MaquetteAp; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mapKey; sourceAttribute = elemKey; }); 
+            name = ap; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ElementTypeEdt; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = elemType; sourceAttribute = elemType; }); 
+            name = elementTypeEdt; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ScolGroupeGrp; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = ggrpKey; sourceAttribute = ggrpKey; }); 
+            name = groupe; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = elemKey; }); 
+            name = individu; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Salles; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = elemKey; }); 
+            name = salle; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

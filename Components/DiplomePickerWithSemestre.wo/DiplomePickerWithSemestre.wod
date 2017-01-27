@@ -1,0 +1,131 @@
+pubDomaines : WOPopUpButton {
+  list = lstDomaines;
+  item = domaineOccur;
+  selection = selectedDomaine;
+  displayString = domaineOccur.fdomLibelle;
+  id = domaineId;
+  noSelectionString = "< Choisissez un domaine >";
+}
+
+AofDomaine : AjaxObserveField {
+  fullSubmit = true;
+  updateContainerID = diplomesId;
+  action = domaineChangeAction;
+  observeFieldID = domaineId; 
+}
+
+AofGrade : AjaxObserveField {
+  fullSubmit = true;
+  updateContainerID = diplomesId;
+  action = gradeChangeAction;
+  observeFieldID = gradesId; 
+}
+
+AucDiplomes : AjaxUpdateContainer {
+  id = diplomesId;
+}
+
+AucSpec : AjaxUpdateContainer {
+  id = specId;
+}
+
+pubGrades : WOPopUpButton {
+  list = lstGrades;
+  item = gradeOccur;
+  selection = selectedGrade;
+  displayString = gradeOccur.fgraLibelle;
+  noSelectionString = "< Choisissez un grade >";
+  id = gradesId;
+}
+
+pubDiplomes : WOPopUpButton {
+  list = lstDiplomes;
+  item = diplomeOccur;
+  selection = selectedDiplome;
+  displayString = libDiplome;
+  noSelectionString = "< Choisissez un diplôme >";
+}
+
+pubSpec : WOPopUpButton {
+  list = lstSpec;
+  item = specOccur;
+  selection = selectedSpec;
+  displayString = libSpec;
+  noSelectionString = "< Choisissez une spécialisation >";
+}
+
+AofDiplomes : AjaxObserveField {
+  fullSubmit = false;
+  updateContainerID = specId;
+  action = diplomeChange;
+}
+
+
+IsDiplome : WOConditional {
+  condition = isDiplome;
+}
+
+IsDiplomeSelected : WOConditional {
+  condition = isDiplomeSelected;
+}
+
+IsSpecSelect : WOConditional {
+  condition = isSpecSelect;
+}
+
+IsNotSpecSelect : WOConditional {
+  condition = isSpecSelect;
+  negate = true;
+}
+
+
+
+IsGrades : WOConditional {
+  condition = isGrades;
+}
+
+IsGradeSelect : WOConditional {
+  condition = isGradeSelect;
+}
+
+
+
+AofSpec : AjaxObserveField {
+  fullSubmit = false;
+  updateContainerID = SemestreId;
+  action = specChange;
+}
+
+AucSemestre : AjaxUpdateContainer {
+  id = SemestreId;
+}
+
+IsSpecSelected : WOConditional {
+  condition = isSpecSelected;
+}
+
+AofSemestre : AjaxObserveField {
+  fullSubmit = false;
+  updateContainerID = ^updateContainerID;
+}
+
+AucValidation : AjaxUpdateContainer {
+  id = "valider";
+}
+
+IsHabSelected : WOConditional {
+  condition = isHabSelected;
+}
+
+ConsulterEns : WOSubmitButton {
+	value = "Consulter";
+	action = consulterEnseignement;
+}
+
+Semestres : WOPopUpButton {
+  list = lstSemestre;
+  item = semestreItem;
+  selection = selectedSemestre;
+  displayString = semestreItem.msemOrdre;
+  noSelectionString = "< Choisissez un niveau >";
+}

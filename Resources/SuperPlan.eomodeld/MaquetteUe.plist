@@ -1,0 +1,75 @@
+{
+    attributes = (
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            precision = 4; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FDOM_CODE"; 
+            externalType = VARCHAR2; 
+            name = fdomCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "MUE_CODE"; 
+            externalType = VARCHAR2; 
+            name = mueCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "MUE_HORAIRE_ETU"; 
+            externalType = NUMBER; 
+            name = mueHoraireEtu; 
+            precision = 5; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = B; 
+        }, 
+        {
+            columnName = "MUE_KEY"; 
+            externalType = NUMBER; 
+            name = mueKey; 
+            precision = 6; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MUE_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mueLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (fannKey, fdomCode, mueCode, mueHoraireEtu, mueKey, mueLibelle); 
+    className = "org.cocktail.superplaner.serveur.metier.MaquetteUe"; 
+    classProperties = (fannKey, fdomCode, mueCode, mueHoraireEtu, mueLibelle, repartitionEcs); 
+    externalName = "SCOLARITE.SCOL_MAQUETTE_UE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, fdomCode, mueCode, mueHoraireEtu, mueLibelle, repartitionEcs); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.MaquetteUe"; 
+    }; 
+    name = MaquetteUe; 
+    primaryKeyAttributes = (mueKey); 
+    relationships = (
+        {
+            destination = MaquetteRepartitionEc; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = mueKey; sourceAttribute = mueKey; }); 
+            name = repartitionEcs; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

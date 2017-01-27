@@ -1,0 +1,62 @@
+{
+    attributes = (
+        {
+            columnName = "LOT_KEY"; 
+            externalType = NUMBER; 
+            name = lotKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (lotKey, noIndividu, salNumero); 
+    className = "org.cocktail.superplaner.serveur.metier.VLotSalleIndividu"; 
+    classProperties = (individuUlr, lotSalle, salle); 
+    externalName = "V_LOT_SALLE_INDIVIDU"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (individuUlr, lotSalle, salle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.VLotSalleIndividu"; 
+    }; 
+    name = VLotSalleIndividu; 
+    primaryKeyAttributes = (lotKey, noIndividu, salNumero); 
+    relationships = (
+        {
+            destination = IndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individuUlr; 
+        }, 
+        {
+            destination = LotSalle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = lotKey; sourceAttribute = lotKey; }); 
+            name = lotSalle; 
+        }, 
+        {
+            destination = Salles; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salle; 
+        }
+    ); 
+}

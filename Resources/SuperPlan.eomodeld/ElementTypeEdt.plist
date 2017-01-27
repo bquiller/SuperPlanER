@@ -1,0 +1,32 @@
+{
+    attributes = (
+        {
+            columnName = "ELEM_TYPE"; 
+            externalType = VARCHAR2; 
+            name = elemType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 25; 
+        }
+    ); 
+    attributesUsedForLocking = (elemType, libelle); 
+    className = "org.cocktail.superplaner.serveur.metier.ElementTypeEdt"; 
+    classProperties = (elemType, libelle); 
+    externalName = "EDTSCOL.ELEMENT_TYPE_EDT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (elemType, libelle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.ElementTypeEdt"; 
+    }; 
+    name = ElementTypeEdt; 
+    primaryKeyAttributes = (elemType); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

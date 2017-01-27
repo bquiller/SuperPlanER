@@ -1,0 +1,85 @@
+{
+    attributes = (
+        {
+            columnName = "AFF_KEY"; 
+            externalType = NUMBER; 
+            name = affKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FANN_KEY"; 
+            externalType = NUMBER; 
+            name = fannKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "FHAB_KEY"; 
+            externalType = NUMBER; 
+            name = fhabKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (affKey, fannKey, fhabKey, noIndividu, salNumero); 
+    className = "org.cocktail.superplaner.serveur.metier.AffectationSalle"; 
+    classProperties = (fannKey, habilitation, individu, periodicitesAff, salle); 
+    externalName = "EDTSCOL.AFFECTATION_SALLE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (fannKey, habilitation, individu, periodicitesAff, salle); 
+        "_javaClientClassName" = "org.cocktail.superplan.client.metier.AffectationSalle"; 
+    }; 
+    name = AffectationSalle; 
+    primaryKeyAttributes = (affKey); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = FormationHabilitation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = fhabKey; sourceAttribute = fhabKey; }); 
+            name = habilitation; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = IndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = individu; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PeriodiciteAffSalle; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = affKey; sourceAttribute = affKey; }); 
+            name = periodicitesAff; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Salles; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = salle; 
+        }
+    ); 
+    userInfo = {fetchSpecificationDictionary = {}; }; 
+}

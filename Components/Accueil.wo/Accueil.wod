@@ -1,0 +1,216 @@
+Wrapper : Wrapper {
+	onloadJS = onloadJS;
+}
+
+Form : ERXWOForm {
+	id = "test";
+	name = "form";
+	multipleSubmit = true;
+	action = doNothing;
+	onsubmit = "return false;";
+}
+
+ExceptionModalDialog: CktlAjaxModalDialog {
+	id = "ExceptionModalDialog";
+	pageName = "Erreur";
+	title = "Une erreur inattendue est survenue";
+	minWidth = 500;
+	resizable = true;
+	minimizable = false;
+	closable = false;
+	maximizable = false;
+	draggable = true;
+	centerVertically = true;
+	open = isOpenFenetreException;
+	showOpener = false;
+}
+
+IfEtudiant : WOConditional {
+	condition = session.isEtudiant;
+}
+MyForm1 : WOForm {
+	id = "id";
+	name = "form1";
+	multipleSubmit = true;
+	action = doNothing;
+	onsubmit = "return false;";
+}
+ImgSearch : WOImage {
+  alt = "Recherche";
+  border = 0;
+  src = "images/search.png";
+  align="absmiddle";
+}
+
+AulSearch : AjaxUpdateLink {
+  action = openSearch;
+  title = "Recherche...";
+  href = "javascript:void(0)";
+}
+AulPicker: AjaxUpdateLink {
+  action = openDiplomePicker;
+  title = "Selectionner...";
+  href = "javascript:void(0)";
+}
+
+IfNotEtudiant : WOConditional {
+	negate = "true";
+	condition = session.isEtudiant;
+}
+
+
+AmdSearch : AjaxModalDialog {
+  id = "amdSearch";
+  width = "800";
+  height = "450";
+  title = "Recherche ...";
+  showOpener = false;
+  centerVertically = true;
+  afterHide = "function(close){onCloseSearch();}";
+}
+
+AmdPicker : AjaxModalDialog {
+  id = "amdPicker";
+  width = "800";
+  height = "450";
+  title = "Selectionner ...";
+  showOpener = false;
+  centerVertically = true;
+  afterHide = "function(close){onClosePicker();}";
+}
+
+PersonneSrch : PersonneSrch {
+  selectedPersonne = selectedSearchPersonne;
+  utilisateurPersId = getPUser;
+  //utilisateurPersId = getPUser.persId;
+  isReadOnly = true;
+  showDetail = false;
+  showDetailInModalBox = true;
+  persTypeInterneExterne = searchTypeIntExt;//"interne";
+  persType = searchTypePhysMoral;//"individu";
+  updateContainerIDOnSelectionnerPersonneInTableview = aucselpersonneid;
+  showStructures = false;
+  showRadioInterneExterne = false;
+  qualifierForIndividus = qualifier;
+}
+
+DiplomePicker : DiplomePickerWithSemestre {
+  selectedSemestre = selectedSearchSemestre;
+  updateContainerID = aucselfhabid;
+  editingContext = session.defaultEditingContext;
+//  selectedSpec = enseignement;
+  selectedDiplome = delegate.selectedDiplome;
+  selectedDomaine = delegate.selectedDomaine;
+  selectedSpec = delegate.selectedSpec;
+  selectedGrade = delegate.selectedGrade;
+  selectedYear = annee;
+  isSpecSelect = true;
+  isGradeSelect = true;
+  popup = false;
+  windowTitle = "Titre";
+  delegate = delegate;
+}
+
+AulSelectFromSearch : WOHyperlink {
+  action = selectFromSearch;
+}
+
+AulSelectFromPicker: WOHyperlink {
+  action = selectFromPicker;
+  
+}
+
+
+AucSearch : AjaxUpdateContainer {
+  id = "aucSearch";
+}
+
+AucPicker : AjaxUpdateContainer {
+  id = "aucPicker";
+}
+AucContent : AjaxUpdateContainer {
+  id = "container";
+}
+
+AulOnClose : AjaxUpdateLink {
+  updateContainerID = "aucSearch";//aucTriggerSearchId;
+  action = onCloseSearch;
+  functionName = "onCloseSearch";
+}
+
+AulPickerOnClose : AjaxUpdateLink {
+  updateContainerID = "aucPicker";//aucTriggerSearchId;
+  action = onClosePicker;
+  functionName = "onClosePicker";
+}
+
+
+IsInSearch : WOConditional {
+  condition = isInSearch;
+}
+
+IsInPicker : WOConditional {
+  condition = isInPicker;
+}
+
+AucTriggerSearch : AjaxUpdateContainer {
+	id = aucTriggerSearchId;
+}
+
+AutSearch : AjaxUpdateTrigger {
+	updateContainerIDs = lstRefreshSearchZones;
+}
+
+AucSelPersonne : AjaxUpdateContainer {
+  id = aucselpersonneid;
+  style = "text-align:center;";
+}
+
+AucSelPicker : AjaxUpdateContainer {
+  id = aucselfhabid;
+  style = "text-align:center;";
+}
+
+AucSelSemestre: AjaxUpdateContainer {
+  id = aucselfhabid;
+  style = "text-align:center;";
+}
+
+IsSelPersonne : ERXNonNullConditional {
+  condition = selectedSearchPersonne;
+}
+IsSelSemestre : ERXNonNullConditional {
+  condition = selectedSearchSemestre;
+}
+
+NomSelPersonne : WOString {
+  value = selectedSearchPersonne.nomCompletAffichage;
+}
+
+NomSelSemestre : WOString {
+  value = selectedSearchSemestreToString;
+}
+
+
+CalendarContainer: AjaxUpdateContainer {
+	id = "Container";
+}
+Calendar : GenericCalendar {
+}
+
+
+ChoixGroupes : CktlAjaxModalDialog {
+	label = "choisissez un groupe";
+	id = "ChoixGroupes";
+	pageName = "ChoixGroupes";
+	title = "Choisir les groupes";
+	closeUpdateContainerID = "Container";
+	minWidth = 500;
+	resizable = true;
+	minimizable = false;
+	closable = true;
+	maximizable = false;
+	draggable = true;
+	centerVertically = true;
+	height = 600;
+}

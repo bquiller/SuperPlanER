@@ -1,0 +1,115 @@
+Form : WOForm {
+	id = "inspecteurForm";
+	name = "form";
+	multipleSubmit = true;
+	action = doNothing;
+	onsubmit = "return false;";
+}
+
+RechercheContainer : AjaxUpdateContainer {
+	id = "RechercheContainer";
+	class = "box";
+}
+
+ResultatSallesContainer : AjaxUpdateContainer {
+	id = "ResultatSallesContainer";
+}
+
+EventTitle : WOText {
+	value = session.event.title;
+	rows = "4";
+	cols = "50";
+}
+EventJour : WOString {
+	value = session.event.jour;
+}
+
+HourEnd: WOTextField {
+	numberformat = "0:0";
+	id = "DateDeb";
+	value = session.event.endHourAsString;
+	size = 5;
+}
+
+HourStart: WOTextField {
+	numberformat = "0:0";
+	id = "DateDeb";
+	value = session.event.startHourAsString;
+	size = 5;
+}
+
+TabbedPanel: AjaxTabbedPanel {
+	id = "TabbedPanel";
+}
+
+TabPersonne : AjaxTabbedPanelTab {
+	name = "Personne";
+	isSelected = false;
+	// isVisible = ctrl.lePartenaireSelectionne.isStructure;
+	refreshOnSelect = true;
+}
+
+TabSalle : AjaxTabbedPanelTab {
+	name = "Salle";
+	isSelected = false;
+	refreshOnSelect = true;
+}
+
+TabEns : AjaxTabbedPanelTab {
+	name = "Enseignement";
+	isSelected = true;
+	refreshOnSelect = true;
+}
+
+TabExam : AjaxTabbedPanelTab {
+	name = "Examen";
+	isSelected = false;
+	refreshOnSelect = true;
+}
+
+TabObj : AjaxTabbedPanelTab {
+	name = "Objet";
+	isSelected = false;
+	refreshOnSelect = true;
+}
+
+RecherchePersonne : PersonneSrch {
+	formID = "inspecteurForm";
+	updateContainerID = ^updateContainerID;
+	editingContext = ^editingContext;
+	isReadOnly = false;
+	showDetail = false;
+	showDetailInModalBox = false;
+	updateContainerIDOnSelectionnerPersonneInTableview = "RechercheContainer";
+	selectedPersonne = personne;
+	utilisateurPersId = session.applicationUser.persId;
+	showRadioInterneExterne = false;
+	showPersonnesExternes = true;
+	showPersonnesInternes = true;
+}
+
+RechercheSalle : SalleSearch {
+  ec = session.defaultEditingContext;
+  selectedObj = salle;  
+  treeDelegate = treeDelegate;
+  windowTitle = "Recherche AP";
+  idToRefresh = "ResultatSallesContainer";
+  popup = true;
+  divSearchId = "RechercheContainer";
+  visible = true;
+}
+
+RechercheEns : DiplomePickerWithSemestre {
+  editingContext = session.defaultEditingContext;
+//  selectedSpec = enseignement;
+  selectedDiplome = delegate.selectedDiplome;
+  selectedDomaine = delegate.selectedDomaine;
+  selectedSpec = delegate.selectedSpec;
+  selectedGrade = delegate.selectedGrade;
+  selectedYear = annee;
+  isSpecSelect = true;
+  isGradeSelect = true;
+  popup = false;
+  windowTitle = "Titre";
+  delegate = delegate;
+}
