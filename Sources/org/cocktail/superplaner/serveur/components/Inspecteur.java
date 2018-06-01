@@ -1,10 +1,8 @@
 package org.cocktail.superplaner.serveur.components;
 
 import org.cocktail.fwkcktlpersonne.common.metier.IPersonne;
-import org.cocktail.fwkgspotguiajax.serveur.components.SallesTreeDelegate;
+//import org.cocktail.fwkgspotguiajax.serveur.components.SallesTreeDelegate;
 import org.cocktail.scolaritefwk.serveur.metier.eos.EOScolFormationAnnee;
-import org.cocktail.scolaritemodulesfwk.serveur.components.DiplomePickerDefaultDelegate;
-import org.cocktail.scolaritemodulesfwk.serveur.components.EnseignementsTreeDelegate;
 import org.cocktail.superplaner.serveur.DBHandler;
 import org.cocktail.superplaner.serveur.components.controlers.PlanningCtrl;
 
@@ -21,7 +19,7 @@ public class Inspecteur extends MyWOComponent {
 	private static final long serialVersionUID = 1L;
 	private IPersonne personne;
 	private EOGenericRecord salle;
-	private SallesTreeDelegate treeDelegate;
+	// private SallesTreeDelegate treeDelegate;
 
 	private EOGenericRecord enseignement;
 
@@ -91,7 +89,7 @@ public class Inspecteur extends MyWOComponent {
 	public void setPersonne(IPersonne personne) {
 		this.personne = personne;
 	}
-
+/*
 	public SallesTreeDelegate getTreeDelegate() {
 
 		if ((treeDelegate != null)
@@ -109,7 +107,7 @@ public class Inspecteur extends MyWOComponent {
 	public void setTreeDelegate(SallesTreeDelegate treeDelegate) {
 		this.treeDelegate = treeDelegate;
 	}
-
+*/
 	/**
 	 * @return the enseignementsDelegate
 	 */

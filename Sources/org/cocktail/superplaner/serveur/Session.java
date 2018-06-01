@@ -47,8 +47,6 @@ import com.webobjects.foundation.NSNotification;
 import com.webobjects.foundation.NSNotificationCenter;
 import com.webobjects.foundation.NSSelector;
 
-import er.rest.routes.ERXRouteRequestHandler;
-
 
 public class Session extends CocktailAjaxSession {
 
@@ -58,7 +56,7 @@ public class Session extends CocktailAjaxSession {
 	private String messageErreur;
 	private SuperPlanERApplicationUser applicationUser=null;
 	private IPersonne selectedPersonne;
-	public ERXRouteRequestHandler routeRequestHandler ;
+	private String selectedFormation;
 	
 	private Long fannKey;
 	private EvenementPojo event;
@@ -77,6 +75,10 @@ public class Session extends CocktailAjaxSession {
 		selectedGroups = new NSMutableArray<ScolGroupeObjet>();
 	}
 
+	public String getTitre() {
+		if(selectedFormation != null) return selectedFormation;
+		return selectedPersonne.getNomPrenomAffichage();
+	}
 
 	public boolean isEtudiant() {
 		IndividuUlr ind = IndividuUlr.fetchIndividuUlr(session().defaultEditingContext(), IndividuUlr.NO_INDIVIDU_KEY, applicationUser().getNoIndividu());
@@ -172,13 +174,23 @@ public class Session extends CocktailAjaxSession {
 	}
 
 
-	public void setSelectedFormation(
+	public void setSelectedSearchSemestre(
 			EOScolMaquetteSemestre selectedSearchSemestre) {
 		this.selectedSearchSemestre = selectedSearchSemestre;
 	}
 
-	public EOScolMaquetteSemestre getSelectedFormation() {
+	public EOScolMaquetteSemestre getSelectedSearchSemestre() {
 		return selectedSearchSemestre;
+	}
+
+
+	public String getSelectedFormation() {
+		return selectedFormation;
+	}
+
+
+	public void setSelectedFormation(String selectedFormation) {
+		this.selectedFormation = selectedFormation;
 	}
 
 }

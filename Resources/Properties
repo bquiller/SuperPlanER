@@ -1,3 +1,5 @@
+er.javamail.adminEmail=brice.quillerie@unimes.fr
+
 wolips.password=mon_password
 wolips.host=localhost
 wolips.port=9485

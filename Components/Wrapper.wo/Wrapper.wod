@@ -17,7 +17,7 @@ BtnAccueil : WOImage {
 	framework = "FwkCktlThemes";
 }
 SelPersonne : WOString {
-	value = session.selectedPersonne.nomPrenomAffichage;
+	value = session.titre;//
 }
 LinkAccueil : WOHyperlink {
 	action = ctrl.accueil;

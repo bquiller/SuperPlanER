@@ -33,7 +33,6 @@ package org.cocktail.superplaner.serveur.components;
 import org.cocktail.fwkcktlpersonne.common.metier.IPersonne;
 import org.cocktail.scolaritefwk.serveur.metier.eos.EOScolFormationAnnee;
 import org.cocktail.scolaritefwk.serveur.metier.eos.EOScolMaquetteSemestre;
-import org.cocktail.scolaritemodulesfwk.serveur.components.DiplomePickerDefaultDelegate;
 import org.cocktail.superplaner.serveur.DBHandler;
 import org.cocktail.superplaner.serveur.Session;
 import org.cocktail.superplaner.serveur.SuperPlanERApplicationUser;
@@ -154,11 +153,28 @@ public class Accueil extends MyWOComponent {
 
 	public WOActionResults selectFromSearch() {
 		((Session) session()).setSelectedPersonne(selectedSearchPersonne());
+		((Session) session()).setSelectedSearchSemestre(null);
+		((Session) session()).setSelectedFormation(null);
 		return pageWithName(Accueil.class.getName());
 	}
 
 	public WOActionResults selectFromPicker() {
-		((Session) session()).setSelectedFormation(getSelectedSearchSemestre());
+		((Session) session()).setSelectedSearchSemestre(getSelectedSearchSemestre());
+		
+		String titre = delegate.selectedGrade().abreviation() + " ";
+
+		if (delegate.selectedSpec().fspnAbreviation() != null) 
+			titre += delegate.selectedSpec().fspnAbreviation();
+		else if (delegate.selectedSpec().fspnLibelle() != null) 
+			titre += delegate.selectedSpec().fspnLibelle();
+		else if (delegate.selectedDiplome().fdipAbreviation() != null)
+			titre += delegate.selectedDiplome().fdipAbreviation(); 
+		else titre += delegate.selectedDiplome().fdipLibelle();
+
+		titre += " " + getSelectedSearchSemestre().toString();
+
+		((Session) session()).setSelectedFormation(titre);
+				
 		return pageWithName(Accueil.class.getName());
 	}
 

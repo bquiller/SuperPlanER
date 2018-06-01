@@ -2,9 +2,7 @@ package org.cocktail.superplaner.serveur.components;
 
 import java.util.UUID;
 
-import org.cocktail.scolaritefwk.serveur.metier.eos.EOScolFormationAnnee;
 import org.cocktail.scolaritefwk.serveur.metier.eos.EOScolMaquetteSemestre;
-import org.cocktail.scolaritemodulesfwk.serveur.components.DiplomePicker;
 
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
@@ -19,8 +17,6 @@ public class DiplomePickerWithSemestre extends DiplomePicker {
 	private EOScolMaquetteSemestre SemestreItem;
 	private NSArray<EOScolMaquetteSemestre> lstSemestre;
 
-	private EOScolFormationAnnee annee;
-	
 	private String SemestreId;
 	public static final String BINDING_selectedSemestre = "selectedSemestre";
 
@@ -45,10 +41,6 @@ public class DiplomePickerWithSemestre extends DiplomePicker {
 			lstSemestre = null;
 		}
 //		 System.out.println(" ----------> " + lstSemestre.count());
-
-		for (EOScolMaquetteSemestre eoScolFormationSemestre : lstSemestre) {
-			System.out.println("Semestre : " + eoScolFormationSemestre.toString());
-		}
 
 		return null;
 	}
@@ -79,13 +71,13 @@ public class DiplomePickerWithSemestre extends DiplomePicker {
 	}
 
 	public EOScolMaquetteSemestre getSemestreItem() {
-		return SemestreItem;
+		return (EOScolMaquetteSemestre)SemestreItem;
 	}
 
 	public void setSemestreItem(EOScolMaquetteSemestre SemestreItem) {
 		this.SemestreItem = SemestreItem;
 	}
-
+	
 	public boolean isSpecSelected() {
 		System.out.println("selectedSpec : " + getDelegate().selectedSpec());
 		return getDelegate().selectedSpec() != null;

@@ -87,7 +87,7 @@ RecherchePersonne : PersonneSrch {
 	showPersonnesExternes = true;
 	showPersonnesInternes = true;
 }
-
+/*
 RechercheSalle : SalleSearch {
   ec = session.defaultEditingContext;
   selectedObj = salle;  
@@ -98,7 +98,7 @@ RechercheSalle : SalleSearch {
   divSearchId = "RechercheContainer";
   visible = true;
 }
-
+*/
 RechercheEns : DiplomePickerWithSemestre {
   editingContext = session.defaultEditingContext;
 //  selectedSpec = enseignement;

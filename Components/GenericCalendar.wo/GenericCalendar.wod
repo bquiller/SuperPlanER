@@ -6,6 +6,8 @@ Reset : WOSubmitButton {
   action = reset;
   value = "Retourner à mon profil";
 }
+Form : WOForm {
+}
 IfNotMyCalendar : WOConditional {
 	condition = myCalendar;
 	negate = "true";

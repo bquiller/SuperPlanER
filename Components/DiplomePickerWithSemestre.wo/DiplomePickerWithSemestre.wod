@@ -126,6 +126,6 @@ Semestres : WOPopUpButton {
   list = lstSemestre;
   item = semestreItem;
   selection = selectedSemestre;
-  displayString = semestreItem.msemOrdre;
+  displayString = semestreItem.toString;
   noSelectionString = "< Choisissez un niveau >";
 }

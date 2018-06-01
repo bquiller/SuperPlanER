@@ -46,6 +46,7 @@ AulSearch : AjaxUpdateLink {
   action = openSearch;
   title = "Recherche...";
   href = "javascript:void(0)";
+  
 }
 AulPicker: AjaxUpdateLink {
   action = openDiplomePicker;

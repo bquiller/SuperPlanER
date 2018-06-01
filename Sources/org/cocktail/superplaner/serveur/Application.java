@@ -37,16 +37,13 @@ import java.util.TimeZone;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.cocktail.superplaner.serveur.components.Accueil;
-import org.cocktail.superplaner.serveur.metier.IndividuUlr;
-import org.cocktail.superplaner.serveur.metier.Reservation;
-
 import org.cocktail.fwkcktlajaxwebext.serveur.CocktailAjaxApplication;
 import org.cocktail.fwkcktlwebapp.common.CktlLog;
 import org.cocktail.fwkcktlwebapp.common.util.DateCtrl;
 import org.cocktail.fwkcktlwebapp.server.CktlMailBus;
 import org.cocktail.fwkcktlwebapp.server.util.EOModelCtrl;
 import org.cocktail.fwkcktlwebapp.server.version.A_CktlVersion;
+import org.cocktail.superplaner.serveur.components.Accueil;
 
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WOContext;
@@ -71,11 +68,9 @@ import com.webobjects.foundation.NSTimeZone;
 import com.webobjects.foundation.NSTimestampFormatter;
 
 import er.ajax.AjaxUtils;
-import er.extensions.foundation.ERXProperties;
-
 import er.extensions.appserver.ERXApplication;
 import er.extensions.appserver.ERXMessageEncoding;
-import er.rest.routes.ERXRouteRequestHandler;
+import er.extensions.foundation.ERXProperties;
 
 public class Application extends CocktailAjaxApplication {
 

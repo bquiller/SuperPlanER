@@ -195,12 +195,12 @@ public class GenericCalendar extends MyWOComponent {
 			}
 		}
 		
-		if (session().getSelectedFormation() != null) {
+		if (session().getSelectedSearchSemestre() != null) {
 			NSArray<EOEnterpriseObject> semestres = new NSMutableArray<EOEnterpriseObject>();
-			semestres.add(session().getSelectedFormation());
+			semestres.add(session().getSelectedSearchSemestre());
 			
 			NSArray<EOScolMaquetteAp> gidAps = new NSMutableArray<EOScolMaquetteAp>();
-			for (Object mrue : session().getSelectedFormation().toFwkScolarite_ScolMaquetteRepartitionUes()) {
+			for (Object mrue : session().getSelectedSearchSemestre().toFwkScolarite_ScolMaquetteRepartitionUes()) {
 					for (Object mrec : ((EOScolMaquetteRepartitionUe)mrue).toFwkScolarite_ScolMaquetteUe().toFwkScolarite_ScolMaquetteRepartitionEcs()) {
 						for (Object mrap : ((EOScolMaquetteRepartitionEc)mrec).toFwkScolarite_ScolMaquetteEc().toFwkScolarite_ScolMaquetteRepartitionAps()) {
 							EOScolMaquetteAp ap = ((EOScolMaquetteRepartitionAp)mrap).toFwkScolarite_ScolMaquetteAp();
@@ -224,10 +224,12 @@ public class GenericCalendar extends MyWOComponent {
 	 * @return the myCalendar
 	 */
 	public boolean myCalendar() {
-		return ((Session) session()).selectedPersonne().persId().equals(((Session) session()).applicationUser().getPersId());
+		return ((Session) session()).getSelectedSearchSemestre() == null && ((Session) session()).selectedPersonne().persId().equals(((Session) session()).applicationUser().getPersId());
 	}
 
 	public void reset() {
+		((Session) session()).setSelectedSearchSemestre(null);
+		((Session) session()).setSelectedFormation(null);
 		((Session) session()).setSelectedPersonne(PersonneDelegate.fetchPersonneByPersId(session()
 						.defaultEditingContext(), ((Session) session()).applicationUser().getPersId()));
 	}

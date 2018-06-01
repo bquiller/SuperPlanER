@@ -52,7 +52,7 @@ public class Wrapper extends MyWOComponent {
     private String onloadJS;
 	private String erreurScript;
 	private String titre;
-
+	
 	public Wrapper(WOContext context) {
         super(context);
 		ctrl = new WrapperCtrl(this);
