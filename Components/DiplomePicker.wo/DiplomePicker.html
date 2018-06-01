@@ -1,0 +1,21 @@
+<webobject name = "pubDomaines" />
+<webobject name = "AofDomaine" />
+<webobject name = "AucDiplomes">
+  <webobject name = "IsGradeSelect">
+    <webobject name = "IsGrades">
+      <webobject name = "pubGrades" />
+      <webobject name = "AofGrade" />
+    </webobject>
+  </webobject>
+  <webobject name = "IsDiplome">
+    <webobject name = "IsSpecSelect">
+      <webobject name = "AofDiplomes"> <webobject name = "pubDiplomes" /></webobject>
+    </webobject>
+    <webobject name = "IsNotSpecSelect"> <webobject name = "pubDiplomes" /> </webobject>
+  </webobject>
+  <webobject name = "IsSpecSelect">
+    <webobject name = "AucSpec">
+      <webobject name = "IsDiplomeSelected"> <webobject name = "pubSpec" /> </webobject>
+    </webobject>
+  </webobject>
+</webobject>
